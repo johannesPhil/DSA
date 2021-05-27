@@ -36,7 +36,7 @@ const ThisStack = function () {
 };
 
 //Implementation without `this`
-const Stack = () => {
+const Stack = function () {
 	let store = {};
 	let count = 0;
 
@@ -67,7 +67,8 @@ const Stack = () => {
 	};
 };
 
-let stack = new ThisStack(); //Or let stack = new Stack();
+//let stack = new ThisStack();
+let stack = new Stack();
 
 stack.push(1);
 stack.push(6);
