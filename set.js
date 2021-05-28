@@ -91,3 +91,4 @@ setB.add("a");
 console.log(setA.subset(setB));
 console.log(setA.union(setB).values());
 console.log(setA.intersection(setB).values());
+console.log(setA.collection);
