@@ -19,10 +19,9 @@ class BST {
 			this.root = new Node(data);
 			return;
 		} else {
-			this.search(node, data);
+			return this.search(node, data);
 		}
 	}
-
 	search(node, data) {
 		if (data < node.data) {
 			if (node.left === null) {
@@ -40,4 +39,29 @@ class BST {
 			return null;
 		}
 	}
+
+	isPresent(data) {
+		let current = this.root;
+		while (current) {
+			if (data === current.data) {
+				return data;
+			}
+			if (data < current.data) {
+				current = current.left;
+			} else {
+				current = current.right;
+			}
+		}
+		return false;
+	}
 }
+
+const bst = new BST();
+
+bst.add(45);
+bst.add(13);
+bst.add(21);
+bst.add(19);
+bst.add(42);
+bst.add(1);
+console.log(bst.isPresent(45));
